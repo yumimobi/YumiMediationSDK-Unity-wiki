@@ -89,7 +89,7 @@ public class YumiSDKDemo : MonoBehaviour
 **强烈建议您尽早调用 `LoadAd()` 来加载视频广告。由于激励视频会自动请求广告，`LoadAd()` 方法只需要调用一次，请勿多次调用**
 
 ```C#
-    this.rewardVideoAd.LoadAd(rewardVideoPlacementId, channelId, gameVersionId);
+  this.rewardVideoAd.LoadAd(rewardVideoPlacementId, channelId, gameVersionId);
 ```
 
 # 展示激励视频
