@@ -38,7 +38,7 @@ Take the iOS platform as an example (the Android platform has the same logic but
 
 *<p align="center" size=1>Select the AD type and debug the single platform</p>*
 
-# 测试广告位
+# TEST ID
 
 | OS      | Formats        | Slot(Placement) ID | Note                                                                                                                                          |
 | ------- | -------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
