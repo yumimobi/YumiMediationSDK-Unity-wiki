@@ -1,8 +1,6 @@
 # Tools and Debugging
 >The Yumi Mediation Test Suite allows you to test whether you have correctly configured your application and ad units to be able to display ads from third-party networks via Yumi mediation.
 
-This guide outlines how to use the Yumi Mediation Test Suite in your iOS app. The first step is integrating the tool into your app.
-
 # Call Debug Mode
 
 ```C#
@@ -40,7 +38,7 @@ Take the iOS platform as an example (the Android platform has the same logic but
 
 *<p align="center" size=1>Select the AD type and debug the single platform</p>*
 
-# TEST ID
+# 测试广告位
 
 | OS      | Formats        | Slot(Placement) ID | Note                                                                                                                                          |
 | ------- | -------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +52,7 @@ Take the iOS platform as an example (the Android platform has the same logic but
 | iOS     | Native         | atb3ke1i           | Using this test ID, you can get test ads which are from YUMI, AdMob, Baidu, GDTMob, Facebook                                                        |
 
 
-# Android build failed
+# Frequently Asked Questions
 ## Failed to find Build Tools...
 ```
 * What went wrong:

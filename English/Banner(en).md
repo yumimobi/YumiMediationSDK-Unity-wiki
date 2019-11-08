@@ -4,7 +4,7 @@
 This guide shows you how to integrate banner ads from YumiMediationSDK into a Unity app. 
 
 # Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
 
 # Create a BannerView
 The first step toward displaying a banner is to create a `YumiBannerView` object in a C# script attached to a GameObject.

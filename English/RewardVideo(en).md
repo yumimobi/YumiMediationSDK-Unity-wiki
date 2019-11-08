@@ -4,10 +4,10 @@
 This guide shows you how to integrate rewarded video ads from YumiMediationSDK into a Unity app.
 
 # Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
 
 # Get reference to singleton instance
-The first step toward displaying a reward video ad is to get a reference to the singleton `YumiRewardVideoAd` instance. This reference can be retrieved by calling `YumiRewardVideoAd.Instance()`.
+The first step toward displaying a reward video ad is to get a reference to the singleton `YumiRewardVideoAd` instance. This reference can be retrieved by calling `YumiRewardVideoAd.Instance`.
 
 ```C#
 using YumiMediationSDK.Api;

@@ -1,5 +1,5 @@
 # Get Started
-Integrating the YumiMediationSDK Mobile Ads Unity plugin into an app, which you will do here, is the first step toward displaying AdMob ads and earning revenue. Once the integration is complete, you can choose an ad format (such as interstitial or rewarded video) to get detailed implementation steps.
+Integrating the YumiMediationSDK Mobile Ads Unity plugin into an app, which you will do here, is the first step toward displaying Yumi ads and earning revenue. Once the integration is complete, you can choose an ad format (such as interstitial or rewarded video) to get detailed implementation steps.
 # Prerequisites
 - Unity 5.6 and above
 
@@ -36,9 +36,9 @@ Make sure all of the files are selected and click **Import**.
 
 ## Update plugin
 
-Delete the Assets/YumiMediationSDK directory, then reimport the plugin as the 3.1 section discussed.
+Delete the Assets/YumiMediationSDK directory, then reimport the plugin as the `First import` section discussed.
 
-Delete the Assets/PlayServicesResolver directory, then reimport the plugin as the 3.1 section discussed.
+Delete the Assets/PlayServicesResolver directory, then reimport the plugin as the `First import` section discussed.
 
 YumiMediationSDK Unity plugin has moved bridge files - Assets/Plugins/Android/unity-plugin-library.jar and Assets/Plugins/iOS/* - to Assets/YumiMediationSDK/../ . So if you imported those files before, you need delete them to avoid compilation error.
 

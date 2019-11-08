@@ -4,10 +4,10 @@
 This guide explains how to integrate interstitial ads into a Unity app.
 
 # Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
 
 # Create a interstitial ad
-The first step toward displaying a interstitial is to create an `YumiInterstitialAd` object in a script attached to a GameObject.
+The first step toward displaying a interstitial is to create an `YumiInterstitialAd` object in a script attached to a `GameObject`.
 
 **The interstitial ad will auto cached when create an interstitial ad**
 
