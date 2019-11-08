@@ -88,7 +88,7 @@ public class YumiSDKDemo : MonoBehaviour
 # Load Reward Video
 **Initiates the ad request, should only be called once as early as possible.**
 ```C#
-    this.rewardVideoAd.LoadAd(rewardVideoPlacementId, channelId, gameVersionId);
+  this.rewardVideoAd.LoadAd(rewardVideoPlacementId, channelId, gameVersionId);
 ```
 
 # Show Reward Video
