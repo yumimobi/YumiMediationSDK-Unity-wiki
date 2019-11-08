@@ -1,13 +1,13 @@
-# RewardVideo Ads
-> Rewarded ads are ads that users have the option of interacting with in exchange for in-app rewards. 
+# 激励视频广告
+> 激励视频广告是一种全屏视频广告，用户可选择使用全屏模式观看，以换取应用内奖励。
 
-This guide shows you how to integrate rewarded video ads from YumiMediationSDK into a Unity app.
+本文档向您介绍如何在 Unity 应用中植入 YumiMediationSDK 激励视频广告。
 
-# Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+# 前提条件
+完成[入门指南](https://github.com/yumimobi/YumiMediationSDK-Unity-wiki/wiki/GetStarted(cn))的介绍。您的 Unity 应用应该已经导入了 YumiMediationSDK Unity 插件。
 
-# Get reference to singleton instance
-The first step toward displaying a reward video ad is to get a reference to the singleton `YumiRewardVideoAd` instance. This reference can be retrieved by calling `YumiRewardVideoAd.Instance`.
+# 获取激励视频对象
+要展示激励视频广告，首先要获取对 `YumiRewardVideoAd` 单例的引用。您可以通过调用 `YumiRewardVideoAd.Instance()` 来获取激励视频对象。
 
 ```C#
 using YumiMediationSDK.Api;
@@ -85,14 +85,15 @@ public class YumiSDKDemo : MonoBehaviour
   #endregion
 }
 ```
-# Load Reward Video
-**Initiates the ad request, should only be called once as early as possible.**
+# 请求激励视频
+**强烈建议您尽早调用 `LoadAd()` 来加载视频广告。由于激励视频会自动请求广告，`LoadAd()` 方法只需要调用一次，请勿多次调用**
+
 ```C#
   this.rewardVideoAd.LoadAd(rewardVideoPlacementId, channelId, gameVersionId);
 ```
 
-# Show Reward Video
-To show a reward video ad, check the `IsReady()` method to verify that it's finished loading, then call `Play()`. Here's an example of how to do this:
+# 展示激励视频
+要展示激励视频广告，请使用 `IsReady()` 方法验证广告是否已完成加载，然后再调用 `Play()`
 ```c#
 if(this.rewardVideoAd.IsReady())
 {

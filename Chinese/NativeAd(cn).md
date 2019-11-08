@@ -1,12 +1,13 @@
-# Native Ads
-> Native ads match both the form and function of the user experience in which they're placed. They also match the visual design of the app they live within. 
+# 原生广告
+> 原生广告无论是在形式上还是功能上都与广告投放到的内容相契合，可为用户带来浑然一体的体验。
 
-This guide shows you how to use the YumiMediationSDK Ads Unity plugin to implement YumiMediationSDK Native Ads in a Unity app
-# Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+本指南介绍了如何使用 YumiMediationSDK Unity 插件在 Unity 应用中展示 Yumi 原生广告。
 
-# Create a Native Ad
-The first step toward displaying a nativeAd is to create an `YumiNativeAd` object in a script attached to a GameObject.
+# 前提条件
+完成[入门指南](https://github.com/yumimobi/YumiMediationSDK-Unity-wiki/wiki/GetStarted(cn))的介绍。您的 Unity 应用应该已经导入了 YumiMediationSDK Unity 插件。
+
+# 创建原生广告
+要展示原生广告，首先要在附加到 `GameObject` 的脚本中创建 `YumiNativeAd` 对象。
 
 ```C#
 using UnityEngine;
@@ -109,8 +110,8 @@ public class YumiNativeScene : MonoBehaviour
     #endregion
 }
 ```
-# YumiNativeAdOptions
-`YumiNativeAdOptions` is the last parameter to init the `YumiNativeAd`, you can set the ad style by this.
+# 原生广告的高级设置
+`YumiNativeAdOptions` 是初始化 `YumiNativeAd` 的最后一个参数，可以配置原生广告显示的样式，参数详情如下：
 
 ```C#
 // AdOptionViewPosition: TOP_LEFT,TOP_RIGHT,BOTTOM_LEFT,BOTTOM_RIGHT
@@ -128,27 +129,27 @@ public ScaleType coverImageScaleType { get; private set; }
 public Transform expressAdViewTransform { get; private set; }
 ```
 
-The default create `YumiNativeAdOptions` instance code:
+默认创建 `YumiNativeAdOptions` 实例代码：
 ```C#
 YumiNativeAdOptions options = new NativeAdOptionsBuilder().Build();
 ```
-The custom create `YumiNativeAdOptions` instance code:
+自定义创建 `YumiNativeAdOptions` 实例代码：
 ```C#
  NativeAdOptionsBuilder builder = new NativeAdOptionsBuilder();
  builder.setExpressAdViewTransform(adPanel.transform);
 
  YumiNativeAdOptions options = new YumiNativeAdOptions(builder);
 ```
-**If you want to support native express ad you must use `builder.setExpressAdViewTransform(adPanel.transform);` to create options objects**
+**如果要支持原生模板广告必须使用 `builder.setExpressAdViewTransform(adPanel.transform);` 创建 options 对象**
 
-# Request Native
+# 请求原生广告
 
 ```C#
 int adCount = 1;// adCount: you can load more than one ad
 this.nativeAd.LoadAd(adCount);
 ```
 
-# Create Your Native Ad Layout
+# 创建原生广告布局
 
 ```C#
 public class YumiNativeScene : MonoBehaviour
@@ -168,11 +169,11 @@ public class YumiNativeScene : MonoBehaviour
   }
 ```
 
-Here is how they can be associated with the views in the editor:
+以下说明这些元素如何与编辑器中的视图关联：
 
 ![image](./resources/nativeAd.png)
 
-# Populating Your Layout Using the Ad's Metadata
+# 使用广告元数据注册布局
 
 ```C#
 public class YumiNativeScene : MonoBehaviour
@@ -195,8 +196,8 @@ public class YumiNativeScene : MonoBehaviour
 }
 ```
 
-# Show Native Ad View
-1. Native ad
+# 展示原生广告视图
+1. 原生广告
 
 ```C#
 // Determines whether nativeAd data is invalidated, if invalidated please reload
@@ -211,7 +212,7 @@ if (!yumiNativeData.isExpressAdView)
     this.nativeAd.ShowView(yumiNativeData);
   }
 ```
-2. Native express ad 
+2. 原生模板广告
 ```C#
   // if the ad is native express view please show ad in HandleNativeExpressAdRenderSuccess
   if (yumiNativeData.isExpressAdView)
@@ -219,25 +220,23 @@ if (!yumiNativeData.isExpressAdView)
     // ...
   }
 ```
+- 注意：显示广告前，您必须注册布局并检查广告是否已经无效。
 
-**You should check whether the ad has been invalidated before displaying it.**
-
-# Hide Native Ad View
+# 隐藏原生广告视图
 
 ```C#
 this.nativeAd.HideView(yumiNativeData);// Hide nativeAd data associate view
 ```
 
-# Remove Native Ad View
+# 移除原生广告视图
 
-Remove current native ad view from screen, and disconnect the native data from the view.
-If you want to display a new view by this layout, call this function first.
+此方法的作用：从屏幕上移除当前广告视图，断开 View 和 广告元数据的注册。在显示一个新广告时，请先调用这个方法。
 
 ```C#
 this.nativeAd.UnregisterView(yumiNativeData);
 ```
 
-# Destroy Native Ad
+# 销毁原生广告
 
 ```C#
 this.nativeAd.Destroy();

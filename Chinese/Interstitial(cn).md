@@ -1,15 +1,15 @@
-# Interstitial Ads
-> Interstitial ads are full-screen ads that cover the interface of their host app.
+# 插屏广告
+> 插屏广告是全屏广告，它会覆盖其托管应用的整个界面
 
-This guide explains how to integrate interstitial ads into a Unity app.
+本文档介绍如何将插屏广告集成到您的 Unity 应用中。
 
-# Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+# 前提条件
+完成[入门指南](https://github.com/yumimobi/YumiMediationSDK-Unity-wiki/wiki/GetStarted(cn))的介绍。您的 Unity 应用应该已经导入了 YumiMediationSDK Unity 插件。
 
-# Create a interstitial ad
-The first step toward displaying a interstitial is to create an `YumiInterstitialAd` object in a script attached to a `GameObject`.
+# 创建插屏广告
+要展示插屏广告，首先要在附加到 `GameObject` 的脚本中创建 `YumiInterstitialAd` 对象。
 
-**The interstitial ad will auto cached when create an interstitial ad**
+**当 interstitial 对象被创建时，它会自动缓存广告**
 
 ```C#
 using YumiMediationSDK.Api;
@@ -79,10 +79,10 @@ public class YumiSDKDemo : MonoBehaviour
   #endregion
 }
 ```
-**The interstitialAd object will auto load another ad when interstitialAd had closed. You don't need to create a new YumiInterstitialAd object**
+**当前 interstitialAd 关闭后，这个 interstitialAd 对象将自动加载下一条广告。 您无需创建新的 `YumiInterstitialAd`对象**
 
-# Show Interstitial
-It is recommended to call `this.interstitialAd.IsReady()` to determine if the screen is ready.
+# 展示插屏广告
+建议先调用 `this.interstitialAd.IsReady()` 判断插屏是否准备好
 
 ```C#
 if(this.interstitialAd.IsReady())
@@ -90,7 +90,7 @@ if(this.interstitialAd.IsReady())
   this.interstitialAd.Show();
 }
 ```
-# Destroy Interstitial
+# 销毁插屏广告
 
 ```c#
 this.interstitialAd.Destroy();

@@ -1,58 +1,57 @@
-# Get Started
-Integrating the YumiMediationSDK Mobile Ads Unity plugin into an app, which you will do here, is the first step toward displaying Yumi ads and earning revenue. Once the integration is complete, you can choose an ad format (such as interstitial or rewarded video) to get detailed implementation steps.
-# Prerequisites
-- Unity 5.6 and above
+# 概述
+将 YumiMediationSDK Unity 插件集成到应用程序中是展示 Yumi 广告并获得收入的第一步。 集成完成后，您可以选择一种广告格式（例如插屏或奖励视频）去集成到您的 Unity App中。
 
-   - To deploy to iOS
+# 前提条件
+- Unity 5.6 或更高版本
 
-     Xcode 7.0 or higher
-
-     iOS 8.0 and above
+   - 部署 iOS
+     
+     Xcode 7.0 或更高版本
+     
+     iOS 8.0 或更高版本
 
      [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 
-   - To deploy to Android
+   - 部署 Android
 
      Android SDK： > 4.1 (API level 16)
 
-     [Demo ](https://github.com/yumimobi/YumiMediationSDK-Unity)
+  [Demo 获取地址](https://github.com/yumimobi/YumiMediationSDK-Unity) 
 
-# Download the YumiMediationSDK Unity plugin
-The YumiMediationSDK Unity plugin enables Unity developers to easily serve Yumimobi Ads on Android and iOS apps without having to write Java or Objective-C code. The plugin provides a C# interface for requesting ads that is used by C# scripts in your Unity project. Use the links below to download the Unity package for the plugin or to take a look at its code on GitHub.
+# 下载 YumiMediationSDK Unity 插件
+Yumi 聚合广告 Unity 插件使 Unity 开发人员可以轻松地在 Android 和 iOS 应用上展示广告，无需编写 Java 或 Objective-C 代码。该插件提供了一个 C# 接口来请求广告。使用下面的链接下载插件的 Unity 包或在 GitHub 上查看其代码。
 
-[Download the YumiMediationSDK Unity plugin](https://github.com/yumimobi/YumiMediationSDK-Unity/raw/master/YumiMediationSDKPlugin.unitypackage)
+[下载YumiMediationSDK Unity插件](https://github.com/yumimobi/YumiMediationSDK-Unity/raw/master/YumiMediationSDKPlugin.unitypackage)
 
-[VIEW SOURCE](https://github.com/yumimobi/YumiMediationSDK-Unity)
+[查看源码](https://github.com/yumimobi/YumiMediationSDK-Unity)
 
-# Import the YumiMediationSDK Unity plugin
-## First import
-Open your project in the Unity editor. Select **Assets> Import Package> Custom Package** and find the YumiMediationSDKPlugin.unitypackage file that you downloaded.
+# 导入 YumiMediationSDK Unity 插件
+## 首次导入
+在 Unity 编辑器中打开您的项目。选择**Assets> Import Package> Custom Package**，找到您下载的 YumiMediationSDKPlugin.unitypackage 文件。
 
 ![img](resources/01.png)
 
-Make sure all of the files are selected and click **Import**.
+确保选中所有文件，然后单击 **Import**.
 
 ![img](resources/02.png)
 
-## Update plugin
+## 升级插件
 
-Delete the Assets/YumiMediationSDK directory, then reimport the plugin as the `First import` section discussed.
+删除 Assets/YumiMediationSDK 目录，并按照 3.1 所述重新导入。
 
-Delete the Assets/PlayServicesResolver directory, then reimport the plugin as the `First import` section discussed.
+删除 Assets/PlayServicesResolver目录，并按照3.1所述重新导入。
 
-YumiMediationSDK Unity plugin has moved bridge files - Assets/Plugins/Android/unity-plugin-library.jar and Assets/Plugins/iOS/* - to Assets/YumiMediationSDK/../ . So if you imported those files before, you need delete them to avoid compilation error.
+新版本插件将桥接文件 Assets/Plugins/Android/unity-plugin-library.jar 和 Assets/Plugins/iOS/* 转移到 Assets/YumiMediationSDK/../ 下，如果之前导入过这些桥接文件，请将其删除，否则会出现编译错误。
 
-# Include the Mobile Ads SDK
+# 集成 YumiMediationSDK
 
-The YumiMediationSDK Unity plugin is distributed with the [Unity Play Services Resolver library](https://github.com/googlesamples/unity-jar-resolver). This library is intended for use by any Unity plugin that requires access to Android specific libraries (e.g., AARs) or iOS CocoaPods. It provides Unity plugins the ability to declare dependencies, which are then automatically resolved and copied into your Unity project.
+YumiMediationSDK Unity 插件随着 [Unity Play Services Resolver library](https://github.com/googlesamples/unity-jar-resolver) 一起发布。这个库适用于任何需要访问 Android 特定库(例如 AARs )或 iOS CocoaPods 的 Unity 插件。它为 Unity 插件提供了声明依赖关系的能力，然后自动解析并复制到 Unity 项目中。请按照下面列出的步骤确保您的项目包含 YumiMediationSDK。
 
-Follow the steps listed below to ensure your project includes the YumiMediationSDK Unity
-## Deploy iOS 
+## 部署 iOS 项目
 
-No procedure are required to integrate the YumiMediationSDK into a Unity project.
+将 YumiMediationSDK 集成到 Unity 项目中无需其他步骤。
 
-The YumiMediationSDK Ads Unity plugin dependencies are listed in **Assets/YumiMediationSDK/Editor/YumiMobileAdsDependencies.xml**  .
-iOS dependencies：
+如果你想要修改 YumiMediationSDK 依赖的库，请修改 **Assets/YumiMediationSDK/Editor/YumiMobileAdsDependencies.xml**  文件，iOS 依赖如下：
 
 ```xml
     <iosPods>
@@ -106,22 +105,20 @@ iOS dependencies：
     </iosPods>
 ```
 
-e.g., Delete `AdMob`, Delete `<iosPod name="YumiMediationAdapters/AdMob" version="4.3.2"></iosPod>`  
+比如删除 `AdMob` ，直接删除 ` <iosPod name="YumiMediationAdapters/AdMob" version="4.3.2"></iosPod>`  即可。
 
-Complete the above procedure, Open **xcworkspace** project.
+构建完成，打开 **xcworkspace** 工程。
 
-**Note: Use CocoaPods to identify iOS dependencies. CocoaPods runs as a post-build process step.**
-**Note: CocoaPods will auto download the thirdparty network's SDK, you don't need add it by manual.**
+**注意：使用 CocoaPods 识别 iOS 依赖项。 CocoaPods 作为后期构建过程步骤运行。**
+**注意: CocoaPods 会自动引用第三方 SDK，您无需手动添加。**
 
-## Deploy Android 
+## 部署 Android 项目
 
-In the Unity editor, select **Assets> Play Services Resolver> Android Resolver>Force Resolve**. The Unity Play Services Resolver library will copy the declared dependencies into the  **Assets/Plugins/Android** directory of your Unity app.
+在 Unity 编辑器中，选择 **Assets> Play Services Resolver> Android Resolver>Force Resolve**。 Unity Play 服务解析器库会将声明的依赖项复制到 Unity 应用程序的 **Assets/Plugins/Android** 目录中。
 
 ![img](resources/03.png)
 
-The YumiMediationSDK Ads Unity plugin dependencies are listed in **Assets/YumiMediationSDK/Editor/YumiMobileAdsDependencies.xml**.
-
-Android dependencies:
+如果你想要修改 YumiMediationSDK 依赖的库，请修改 **Assets/YumiMediationSDK/Editor/YumiMobileAdsDependencies.xml**  文件，Android 依赖如下：
 
 ```xml
 <androidPackages>
@@ -148,13 +145,14 @@ Android dependencies:
   <repositories>
       <repository>https://dl.bintray.com/yumimobi/thirdparty/</repository>
       <repository>https://dl.bintray.com/yumimobi/ads/</repository>
-      <repository>https://dl.bintray.com/pubnative/maven</repository>
+       <repository>https://dl.bintray.com/pubnative/maven</repository>
       <repository>https://tapjoy.bintray.com/maven</repository>
       <repository>https://jcenter.bintray.com/</repository>
       <repository>https://maven.google.com/</repository>
   </repositories>
 </androidPackages>
 ```
-e.g., Delete  `admob`, Delete `<androidPackage spec="com.yumimobi.ads.mediation:admob:4.3.0" />`.
 
-**Note: Unity plugin will auto download the thirdparty network's SDK, you don't need add it by manual.**
+比如删除 `admob`，直接删除 `<androidPackage spec="com.yumimobi.ads.mediation:admob:4.3.0" />` 即可。
+
+**注意: Unity 插件会自动引用第三方广告 SDK，您无需手动添加。**

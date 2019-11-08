@@ -1,13 +1,13 @@
-# Banner Ads
-> Banner ads are rectangular image or text ads that occupy a spot on screen. They stay on screen while users are interacting with the app, and can refresh automatically after a certain period of time.
+# 横幅广告
+> 横幅广告是在屏幕上占据一处位置的矩形图片或文字广告。这类广告会在用户与应用互动时停留在屏幕上，并且可在一段时间后自动刷新。如果您刚开始接触移动广告，建议从横幅广告着手。
 
-This guide shows you how to integrate banner ads from YumiMediationSDK into a Unity app. 
+本文档向您介绍如何将 YumiMediationSDK 横幅广告集成到 Unity 应用中
 
-# Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+# 前提条件
+完成[入门指南](https://github.com/yumimobi/YumiMediationSDK-Unity-wiki/wiki/GetStarted(cn))的介绍。您的 Unity 应用应该已经导入了 YumiMediationSDK Unity 插件。
 
-# Create a BannerView
-The first step toward displaying a banner is to create a `YumiBannerView` object in a C# script attached to a GameObject.
+# 创建 BannerView
+要展示横幅广告，首先要在附加到 GameObject 的 C# 脚本中创建 `YumiBannerView` 对象。
 ```c#
 using YumiMediationSDK.Api;
 using YumiMediationSDK.Common;
@@ -33,9 +33,8 @@ public class YumiSDKDemo : MonoBehaviour
     #else
       string bannerPlacementId = "unexpected_platform";
     #endif
-
-    // You can set the banner size & banner position & autoRefresh & IsSmart in YumiBannerViewOptions
-    // This file is described below.
+    
+    // YumiBannerViewOptions 可以配置 Banner 位置、大小、是否自适应和是否自刷新
     YumiBannerViewOptions bannerOptions = new YumiBannerViewOptionsBuilder().Build();
     this.bannerView = new YumiBannerView(BannerPlacementId, ChannelId, GameVersionId, bannerOptions);
 
@@ -65,66 +64,69 @@ public class YumiSDKDemo : MonoBehaviour
   #endregion
 }
 ```
-# Request Banner
+
+# 请求广告
 
 ```C#
 this.bannerView.LoadAd();
 ```
 
-# Hide Banner
+# 隐藏横幅广告
 
 ```C#
 this.bannerView.Hide();
 ```
 
-# Show Banner
+# 显示隐藏的横幅广告
 
 ```C#
 this.bannerView.Show();
 ```
 
-# Destroy Banner
+# 销毁横幅广告
 
 ```C#
 this.bannerView.Destroy();
 ```
 
-# (Optional) YumiBannerViewOptions
+# (可选) 横幅广告的高级设置
 
-`YumiBannerViewOptions` is the last parameter to init `YumiBannerView`, you can get it in `YumiBannerViewOptions` file.
+`YumiBannerViewOptions` 是初始化 `YumiBannerView` 时传入的最后一个参数，您可在 `YumiBannerViewOptions` 文件中查看：
 
 - `adPosition`
 
-  Set the position of the banner in the superview.
+  设置 banner 广告位所处父视图的位置。默认为下方，居中显示。
 
-  default is `BOTTOM`.
-  
 - `bannerSize`
-  
-  Set the banner size.
 
-  default:
-  - iPhone and iPod Touch ad size. Typically 320x50.
-  - Leaderboard size for the iPad. Typically 728x90.
+  设置 banner 广告的尺寸。
+
+  在 iPhone 及 iPod Touch 上默认为 320 * 50。
+
+  在 iPad 上默认为 728 * 90。
 
 - `isSmart`
 
-  Set the banner to automatically adapter the screen width.
+  默认为 true。
 
-  default is `true`.
+  如果设置为 true，banner 会自适应屏幕宽度。
+
+  如果设置为 false，banner 会展示广告位自身尺寸。
 
 - `disableAutoRefresh`
 
-  default is `false`. banner will request next ad automatically.
+  默认为 false。
+  
+  如果设置为 false，banner 会自动请求下一条广告，您无需重复调用 `this.bannerView.LoadAd(); `。
 
-  if you set it to `true`, then you should call `this.bannerView.LoadAd();` by manual.
+  如果设置为 true，banner 不会进行下一次请求，您必须在恰当的时机再次调用 `this.bannerView.LoadAd();`。
 
-The default create `YumiBannerViewOptions` instance code:
+默认创建 `YumiBannerViewOptions` 实例代码：
 ```C#
 YumiBannerViewOptions bannerOptions = new YumiBannerViewOptionsBuilder().Build();
 ```
 
-The custom create `YumiBannerViewOptions` instance code:
+自定义创建 `YumiBannerViewOptions` 实例代码：
 ```C#
 YumiBannerViewOptionsBuilder builder = new YumiBannerViewOptionsBuilder();
 builder.setAdPosition(YumiAdPosition.TOP);

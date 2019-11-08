@@ -1,10 +1,10 @@
-**Splash Ads**
+# Splash Ads
 >Splash ads is a special ad format that lets you monetize your app load screens. The ads are shown when users cold launch your app or bring it to the foreground. While the ad shows for a few seconds, it can be closed by your users at any time.
 
 This guide shows you how to integrate Splash ads from YumiMediationSDK into a Unity app.
 
 # Prerequisites
-Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
+Complete [Get Started](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/GetStarted(en)). Your Unity app should already have the YumiMediationSDK Unity plugin imported.
 
 # Import YumiSplashScene
 Fllow the steps as the image showing:

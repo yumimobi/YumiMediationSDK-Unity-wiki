@@ -27,6 +27,6 @@
 ## [Tools and Debugging](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/Debugging(en))
 - [Call Debug Mode](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/Debugging(en)#Call-Debug-Mode)
 - [TEST ID](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/Debugging(en)#TEST-ID)
-- [Android build failed](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/Debugging(en)#Android-build-failed)
+- [Frequently Asked Questions](https://github.com/yumimobi/YumiMediationSDK-Unity/wiki/Debugging(en)#Frequently-Asked-Questions)
 
 

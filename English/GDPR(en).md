@@ -3,7 +3,7 @@
  If you are collecting consent from your users, you can make use of APIs discussed below to inform YumiMediationSDK and some downstream consumers of this information. 
  Get more information, please visit our official website.
 
- # Set GDPR
+ ## Set GDPR
 
 ```C#
 public enum YumiConsentStatus
@@ -30,7 +30,7 @@ public enum YumiConsentStatus
 YumiGDPRManager.Instance.UpdateNetworksConsentStatus(YumiConsentStatus.PERSONALIZED);
 ```
 
-# Networks informations
+## Networks informations
 Statistics start at YumiMediationSDK 4.1.0.
 Get more informationm, please visit our official website
 
